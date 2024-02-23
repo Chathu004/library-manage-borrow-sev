@@ -17,7 +17,6 @@ public class BorrowerController {
     @PostMapping("/add")
     public void addBorrower(@RequestBody Borrower borrower){
         service.addBorrower(borrower);
-
     }
     @GetMapping("/get")
     public Iterable<BorrowerEntity> getBorrower(){
