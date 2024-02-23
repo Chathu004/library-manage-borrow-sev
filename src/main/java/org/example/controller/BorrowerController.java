@@ -7,9 +7,6 @@ import org.example.service.BorrowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
-import java.util.List;
-
 @RestController
 @RequestMapping("/borrower")
 @RequiredArgsConstructor
@@ -30,6 +27,10 @@ public class BorrowerController {
     public String deleteBorrower(@PathVariable Long id){
         service.deleteBorrower(id);
         return "delete borrower!";
+    }
+    @GetMapping("search/{id}")
+    public Borrower getBorrowerId(@PathVariable Long id){
+        return service.getBorrowerId(id);
     }
 
 
