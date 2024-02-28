@@ -6,8 +6,6 @@ import org.example.entity.BorrowerEntity;
 import org.example.repository.BorrowerRepository;
 import org.example.service.BorrowerService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +37,16 @@ public class BorrowerServiceImpl implements BorrowerService {
     public Borrower getBorrowerId(Long id) {
         Optional<BorrowerEntity> byId = repository.findById(id);
         return mapper.map(byId, Borrower.class);
+    }
+
+    @Override
+    public Borrower findByUserName(String userName) {
+        return mapper.map(repository.findByUserName(userName),Borrower.class);
+    }
+
+    @Override
+    public Boolean isExistUserName(String userName) {
+       return repository.existsByUserName(userName);
     }
 
     @Override
