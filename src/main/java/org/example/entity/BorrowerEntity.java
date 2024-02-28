@@ -17,9 +17,12 @@ public class BorrowerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String BId;
-    private String name;
-    private String contact;
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String email;
     private String address;
-    private String nic;
+    private String address2;
+    private String country;
+    private String contactNumber;
 }

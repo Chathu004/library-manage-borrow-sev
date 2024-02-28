@@ -11,10 +11,13 @@ import lombok.ToString;
 @ToString
 public class Borrower {
     private Long id;
-    private String bid;
-    private String name;
-    private String contact;
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String email;
     private String address;
-    private String nic;
+    private String address2;
+    private String country;
+    private String contactNumber;
 
 }
