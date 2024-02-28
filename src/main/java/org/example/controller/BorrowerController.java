@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin
 public class BorrowerController {
-    @Autowired
-    BorrowerService service;
+
+    final BorrowerService service;
     @PostMapping("/add")
     public void addBorrower(@RequestBody Borrower borrower){
         service.addBorrower(borrower);
