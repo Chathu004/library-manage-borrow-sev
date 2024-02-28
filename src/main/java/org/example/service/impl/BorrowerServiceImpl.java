@@ -16,13 +16,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class BorrowerServiceImpl implements BorrowerService {
-    @Autowired
-    BorrowerRepository repository;
-    ModelMapper mapper;
-    @Bean
-    public void setUp(){
-        this.mapper =  new ModelMapper();
-    }
+
+    final BorrowerRepository repository;
+
+    final ModelMapper mapper;
+//    @Bean
+//    public void setUp(){
+//        this.mapper =  new ModelMapper();
+//    }
     @Override
     public void addBorrower(Borrower borrower) {
         BorrowerEntity entity = mapper.map(borrower,BorrowerEntity.class);
