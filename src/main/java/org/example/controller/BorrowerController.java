@@ -27,9 +27,18 @@ public class BorrowerController {
         service.deleteBorrower(id);
         return "delete borrower!";
     }
-    @GetMapping("search/{id}")
+    @GetMapping("/search-by-id/{id}")
     public Borrower getBorrowerId(@PathVariable Long id){
         return service.getBorrowerId(id);
+    }
+    @GetMapping("/search-by-name/{userName}")
+    public Borrower findByUserName(@PathVariable String userName){
+        return service.findByUserName(userName);
+    }
+
+    @GetMapping("/is-exist-userName/{userName}")
+    public Boolean isExistUserName(@PathVariable String userName){
+       return service.isExistUserName(userName);
     }
 
 
